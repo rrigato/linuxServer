@@ -41,7 +41,6 @@ Note that if you are using a computer that does not have a 64-bit architecture y
 ### Scheduling automatic shutdown and startup for the server
 
 
-Note that be default cronjobs are logged in the /var/log/syslog directory, so that is the first place to go for debugging purposes
 
 
 Some computers do not support automatic startup in there BIOS/UEFI boot loader, you need to first check whether the computer
@@ -62,3 +61,17 @@ cat /proc/driver/rtc
 If it does then your computer supports automatic wake times
 [Here is the shell script to run for auto start/stop](https://github.com/rrigato/linuxServer/blob/master/autoStartup.sh)
 
+
+Next set a crontab to run the shell script:
+
+```
+ sudo crontab -e
+```
+
+Append the following line to the crontab:
+
+```
+sudo bash /usr/local/sbin/autoStartup
+```
+
+Note that by default cronjobs are logged in the /var/log/syslog directory, so that is the first place to go for debugging purposes
