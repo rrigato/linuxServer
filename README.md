@@ -2,7 +2,7 @@
 Describes some useful scripts for setting up Ubuntu server
 
 
-###Installing R and shiny server
+### Installing R and shiny server
 
 The first step is adding the R repository
 
@@ -25,7 +25,7 @@ Once in the interpreter, the R.Version() will display the version of R that was 
 
 
 
-#####Install the shiny server
+##### Install the shiny server
 
 Installs gdebi, gets the compiled binaries from source and runs gdebi on the compiled code
 ```
@@ -35,3 +35,12 @@ Installs gdebi, gets the compiled binaries from source and runs gdebi on the com
 ```
 
 Note that if you are using a computer that does not have a 64-bit architecture you will have to build the binaries from the source code
+
+
+
+### Scheduling automatic shutdown and startup for the server
+[Here is the shell script to run for auto start/stop](https://github.com/rrigato/linuxServer/blob/master/autoStartup.sh)
+
+Note that be default cronjobs are logged in the /var/log/syslog directory, so that is the first place to go for debugging purposes
+
+
